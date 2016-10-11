@@ -9,17 +9,17 @@ using System.Windows.Input;
 
 namespace tmca_uml
 {
-    public class NewProjectCommand : ICommand
+    public class OpenProjectCommand : ICommand
     {
         public string Header { get; set; }
         public KeyGesture Gesture { get; set; }
         public event EventHandler CanExecuteChanged;
 
-        public NewProjectCommand()
+        public OpenProjectCommand()
         {
-            Header = "New Project";
+            Header = "Open Project";
 
-            Gesture = new KeyGesture(Key.N, ModifierKeys.Control);
+            Gesture = new KeyGesture(Key.O, ModifierKeys.Control);
         }
 
         public bool CanExecute(object parameter)
@@ -29,7 +29,7 @@ namespace tmca_uml
 
         public void Execute(object parameter)
         {
-            MessageBox.Show("New something!");
+            MessageBox.Show("Open something!");
         }
 
         public string GestureText

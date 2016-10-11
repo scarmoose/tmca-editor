@@ -10,13 +10,14 @@
         <tmca:MenuBar/>
     </Window.DataContext>
     <Window.InputBindings>
-        <KeyBinding Command="{Binding NewProjectCommand}" Key ="{Binding NewProjectCommand.Gesture.Key}" Modifiers="{Binding NewProjectCommand.Gesture.Modifiers}"></KeyBinding>
+        <KeyBinding Command="{Binding NewProjectCommand}" Key ="{Binding NewProjectCommand.Gesture.Key}" Modifiers="{Binding NewProjectCommand.Gesture.Modifiers}"/>
+        <KeyBinding Command="{Binding OpenProjectCommand}" Key ="{Binding OpenProjectCommand.Gesture.Key}" Modifiers="{Binding OpenProjectCommand.Gesture.Modifiers}"/>
     </Window.InputBindings>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_File">
                 <MenuItem InputGestureText="{Binding NewProjectCommand.GestureText}" Header="{Binding NewProjectCommand.Header}" Command="{Binding NewProjectCommand}"/>
-                <MenuItem Header="_Open Project"/>
+                <MenuItem InputGestureText="{Binding OpenProjectCommand.GestureText}" Header="{Binding OpenProjectCommand.Header}" Command="{Binding OpenProjectCommand}"/>
                 <MenuItem Header="_Save" Command="Save"/>
                 <MenuItem Header="_Save As..."/>
                 <Separator/>
@@ -49,5 +50,12 @@
                 <MenuItem Header="_About TMCA Editor"/>
             </MenuItem>
         </Menu>
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar>
+                <Button ToolTip="New Project">
+                    <Image Source=""/>
+                </Button>
+            </ToolBar>
+        </ToolBarTray>
     </DockPanel>
 </Window>

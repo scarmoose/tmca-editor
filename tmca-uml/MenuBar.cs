@@ -10,10 +10,12 @@ namespace tmca_uml
     class MenuBar
     {
         public ICommand NewProjectCommand { get; set; }
+        public ICommand OpenProjectCommand { get; set; }
 
         public MenuBar()
         {
             NewProjectCommand = new NewProjectCommand();
+            OpenProjectCommand = new OpenProjectCommand();
         }
     }
 }
