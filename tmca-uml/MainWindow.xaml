@@ -3,10 +3,51 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:tmca_uml"
+        xmlns:tmca="clr-namespace:tmca_uml"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="800" Width="1200">
+    <Window.DataContext>
+        <tmca:MenuBar/>
+    </Window.DataContext>
+    <Window.InputBindings>
+        <KeyBinding Command="{Binding NewProjectCommand}" Key ="{Binding NewProjectCommand.Gesture.Key}" Modifiers="{Binding NewProjectCommand.Gesture.Modifiers}"></KeyBinding>
+    </Window.InputBindings>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem InputGestureText="{Binding NewProjectCommand.GestureText}" Header="{Binding NewProjectCommand.Header}" Command="{Binding NewProjectCommand}"/>
+                <MenuItem Header="_Open Project"/>
+                <MenuItem Header="_Save" Command="Save"/>
+                <MenuItem Header="_Save As..."/>
+                <Separator/>
+                <MenuItem Header="_Exit"/>
+            </MenuItem>
+            <MenuItem Header="_Edit">
+                <MenuItem Header="_Undo" Command="Undo"/>
+                <MenuItem Header="_Redo" Command="Redo"/>
+                <Separator/>
+                <MenuItem Header="_Cut" Command="Cut"/>
+                <MenuItem Header="_Copy" Command="Copy"/>
+                <MenuItem Header="_Paste" Command="Paste"/>
+                <MenuItem Header="_Delete" Command="Delete"/>
+            </MenuItem>
+            <MenuItem Header="_View">
+                <MenuItem Header="_Toolbox" IsCheckable="True" IsChecked="True"/>
+                <MenuItem Header="_Statusbar" IsCheckable="True" IsChecked="True"/>
+                <Separator/>
+                <MenuItem Header="_Zoom In"/>
+                <MenuItem Header="_Zoom Out"/>
+            </MenuItem>
+            <MenuItem Header="_Insert">
+                <MenuItem Header="_Class"/>
+                <MenuItem Header="_Dependency"/>
+                <MenuItem Header="_TextBox"/>
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem Header="_View Help" Command="Help"/>
+                <Separator/>
+                <MenuItem Header="_About TMCA Editor"/>
+            </MenuItem>
+        </Menu>
+    </DockPanel>
 </Window>
