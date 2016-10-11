@@ -63,6 +63,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Commands\ExitCommand.cs" />
     <Compile Include="Commands\OpenProjectCommand.cs" />
     <Compile Include="Commands\NewProjectCommand.cs" />
     <Compile Include="MainWindow.xaml.cs">
@@ -98,7 +99,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\Holidays-Bat-icon.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\arrow-redo-icon.png" />
     <Resource Include="Images\arrow-undo-icon.png" />

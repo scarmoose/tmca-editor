@@ -12,32 +12,81 @@
     <Window.InputBindings>
         <KeyBinding Command="{Binding NewProjectCommand}" Key ="{Binding NewProjectCommand.Gesture.Key}" Modifiers="{Binding NewProjectCommand.Gesture.Modifiers}"/>
         <KeyBinding Command="{Binding OpenProjectCommand}" Key ="{Binding OpenProjectCommand.Gesture.Key}" Modifiers="{Binding OpenProjectCommand.Gesture.Modifiers}"/>
+        <KeyBinding Command="{Binding ExitCommand}" Key ="{Binding ExitCommand.Gesture.Key}" Modifiers="{Binding ExitCommand.Gesture.Modifiers}"/>
     </Window.InputBindings>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_File">
-                <MenuItem InputGestureText="{Binding NewProjectCommand.GestureText}" Header="{Binding NewProjectCommand.Header}" Command="{Binding NewProjectCommand}"/>
-                <MenuItem InputGestureText="{Binding OpenProjectCommand.GestureText}" Header="{Binding OpenProjectCommand.Header}" Command="{Binding OpenProjectCommand}"/>
-                <MenuItem Header="_Save" Command="Save"/>
+                <MenuItem InputGestureText="{Binding NewProjectCommand.GestureText}" Header="{Binding NewProjectCommand.Header}" Command="{Binding NewProjectCommand}">
+                    <MenuItem.Icon>
+                        <Image Source="Images/new-file-icon.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem InputGestureText="{Binding OpenProjectCommand.GestureText}" Header="{Binding OpenProjectCommand.Header}" Command="{Binding OpenProjectCommand}">
+                    <MenuItem.Icon>
+                        <Image Source="Images/open-file-icon.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Save">
+                    <MenuItem.Icon>
+                        <Image Source="Images/Save-icon.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
                 <MenuItem Header="_Save As..."/>
                 <Separator/>
-                <MenuItem Header="_Exit"/>
+                <MenuItem InputGestureText="{Binding ExitCommand.GestureText}" Header="{Binding ExitCommand.Header}" Command="{Binding ExitCommand}">
+                    <MenuItem.Icon>
+                        <Image Source="Images/Holidays-Bat-icon.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
             <MenuItem Header="_Edit">
-                <MenuItem Header="_Undo" Command="Undo"/>
-                <MenuItem Header="_Redo" Command="Redo"/>
+                <MenuItem Header="_Undo">
+                    <MenuItem.Icon>
+                        <Image Source="Images/arrow-undo-icon.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Redo">
+                    <MenuItem.Icon>
+                        <Image Source="Images/arrow-redo-icon.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
                 <Separator/>
-                <MenuItem Header="_Cut" Command="Cut"/>
-                <MenuItem Header="_Copy" Command="Copy"/>
-                <MenuItem Header="_Paste" Command="Paste"/>
-                <MenuItem Header="_Delete" Command="Delete"/>
+                <MenuItem Header="_Cut">
+                    <MenuItem.Icon>
+                        <Image Source="Images/cut-icon.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Copy">
+                    <MenuItem.Icon>
+                        <Image Source="Images/Copy-icon.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Paste">
+                    <MenuItem.Icon>
+                        <Image Source="Images/Paste-icon.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Delete">
+                    <MenuItem.Icon>
+                        <Image Source="Images/Button-Close-icon.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
             <MenuItem Header="_View">
                 <MenuItem Header="_Toolbox" IsCheckable="True" IsChecked="True"/>
                 <MenuItem Header="_Statusbar" IsCheckable="True" IsChecked="True"/>
                 <Separator/>
-                <MenuItem Header="_Zoom In"/>
-                <MenuItem Header="_Zoom Out"/>
+                <MenuItem Header="_Zoom In">
+                    <MenuItem.Icon>
+                        <Image Source="Images/Zoom-In-icon.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Zoom Out">
+                    <MenuItem.Icon>
+                        <Image Source="Images/Zoom-Out-icon.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
             <MenuItem Header="_Insert">
                 <MenuItem Header="_Class"/>
@@ -52,8 +101,11 @@
         </Menu>
         <ToolBarTray DockPanel.Dock="Top">
             <ToolBar>
-                <Button ToolTip="New Project">
-                    <Image Source=""/>
+                <Button ToolTip="{Binding NewProjectCommand.Header}" Command="{Binding NewProjectCommand}" Height="20" Width="20">
+                    <Image Source="Images/new-file-icon.png"/>
+                </Button>
+                <Button ToolTip="{Binding OpenProjectCommand.Header}" Command="{Binding OpenProjectCommand}" Height="20" Width="20">
+                    <Image Source="Images/open-file-icon.png"/>
                 </Button>
             </ToolBar>
         </ToolBarTray>
