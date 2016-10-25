@@ -132,6 +132,11 @@
     <Resource Include="Images\Zoom-In-icon.png" />
     <Resource Include="Images\Zoom-Out-icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Editing-Bold-icon.png" />
+    <Resource Include="Images\Editing-Italic-icon.png" />
+    <Resource Include="Images\Editing-Underline-icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
