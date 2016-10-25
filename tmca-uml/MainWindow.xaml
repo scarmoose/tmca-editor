@@ -37,7 +37,11 @@
                         <Image Source="Images/Save-icon.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="{Binding SaveAsCommand.Header}" Command="{Binding SaveAsCommand}"/>
+                <MenuItem Header="{Binding SaveAsCommand.Header}" Command="{Binding SaveAsCommand}">
+                    <MenuItem.Icon>
+                        <Image Source="Images/Save-as-icon.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
                 <Separator/>
                 <MenuItem InputGestureText="{Binding ExitCommand.GestureText}" Header="{Binding ExitCommand.Header}" Command="{Binding ExitCommand}">
                     <MenuItem.Icon>

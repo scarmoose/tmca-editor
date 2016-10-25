@@ -59,11 +59,11 @@ namespace tmca_uml
             {
                 if (value.Equals("Error"))
                 {
-                    statusBarBackground = "Red";
+                    statusBarBackground = "RosyBrown";
                 }
                 else if (value.Equals("Success"))
                 {
-                    statusBarBackground = "Green";
+                    statusBarBackground = "YellowGreen";
                 }
                 else
                 {

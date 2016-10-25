@@ -33,11 +33,12 @@ namespace tmca_uml.Commands.View
                 if (visible == true)
                 {
                     mainWindow.data.StatusBarVisability = "Hidden";
-                    mainWindow.data.StatusBarLabel = "";
                     visible = false;
                 }
                 else if (visible == false)
                 {
+                    mainWindow.data.StatusBarLabel = "";
+                    mainWindow.data.StatusBarBackground = "";
                     mainWindow.data.StatusBarVisability = "Visible";
                     visible = true;
                 }

@@ -33,6 +33,7 @@ namespace tmca_uml
             if (mainWindow != null)
             {
                 mainWindow.data.StatusBarLabel = "Project opened succesfully...";
+                mainWindow.data.StatusBarBackground = "Success";
             }
             else
             {
