@@ -25,7 +25,12 @@ namespace tmca_uml.Commands.Insert
 
         public void Execute(object parameter)
         {
-            MessageBox.Show("New TextBox");
+            var mainWindow = (Application.Current.MainWindow as MainWindow);
+            if (mainWindow != null)
+            {
+                mainWindow.data.resetStatusBar();
+                MessageBox.Show("New TextBox");
+            }
         }
     }
 }

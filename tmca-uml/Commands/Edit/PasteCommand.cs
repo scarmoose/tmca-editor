@@ -35,6 +35,7 @@ namespace tmca_uml.Commands.Edit
             if (mainWindow != null)
             {
                 mainWindow.data.StatusBarLabel = "The content was pasted successfully...";
+                mainWindow.data.StatusBarBackground = "";
             }
             else
             {

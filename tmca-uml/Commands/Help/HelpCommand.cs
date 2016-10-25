@@ -34,8 +34,8 @@ namespace tmca_uml.Commands.Help
             var mainWindow = (Application.Current.MainWindow as MainWindow);
             if (mainWindow != null)
             {
+                mainWindow.data.resetStatusBar();
                 MessageBox.Show("Help info...");
-                mainWindow.data.StatusBarLabel = "Help was shownes succesfully...";
             }
             else
             {

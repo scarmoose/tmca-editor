@@ -33,6 +33,7 @@ namespace tmca_uml.Commands
             if (mainWindow != null)
             {
                 mainWindow.data.StatusBarLabel = "The Project was saved succesfully...";
+                mainWindow.data.StatusBarBackground = "Success";
             }
             else
             {

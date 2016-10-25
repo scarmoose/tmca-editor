@@ -115,9 +115,14 @@ namespace tmca_uml
             AboutCommand = new AboutCommand();
 
             //StatusBar
+            resetStatusBar();
+            StatusBarVisability = "Visible";
+        }
+
+        public void resetStatusBar()
+        {
             StatusBarLabel = "";
             StatusBarBackground = "";
-            StatusBarVisability = "Visible";
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

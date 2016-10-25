@@ -34,6 +34,7 @@ namespace tmca_uml.Commands.Edit
             if (mainWindow != null)
             {
                 mainWindow.data.StatusBarLabel = "The content was copied succesfully...";
+                mainWindow.data.StatusBarBackground = "";
             }
             else
             {

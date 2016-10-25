@@ -29,8 +29,8 @@ namespace tmca_uml.Commands.Help
             var mainWindow = (Application.Current.MainWindow as MainWindow);
             if (mainWindow != null)
             {
+                mainWindow.data.resetStatusBar();
                 MessageBox.Show("About info...");
-                mainWindow.data.StatusBarLabel = "About was showned succesfully...";
             }
             else
             {

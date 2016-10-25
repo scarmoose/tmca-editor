@@ -33,6 +33,7 @@ namespace tmca_uml.Commands.Edit
             if (mainWindow != null)
             {
                 mainWindow.data.StatusBarLabel = "The content was cutted succesfully...";
+                mainWindow.data.StatusBarBackground = "";
             }
             else
             {

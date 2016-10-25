@@ -37,8 +37,7 @@ namespace tmca_uml.Commands.View
                 }
                 else if (visible == false)
                 {
-                    mainWindow.data.StatusBarLabel = "";
-                    mainWindow.data.StatusBarBackground = "";
+                    mainWindow.data.resetStatusBar();
                     mainWindow.data.StatusBarVisability = "Visible";
                     visible = true;
                 }

@@ -33,6 +33,7 @@ namespace tmca_uml.Commands.Edit
             if (mainWindow != null)
             {
                 mainWindow.data.StatusBarLabel = "Redo done...";
+                mainWindow.data.StatusBarBackground = "";
             }
             else
             {
