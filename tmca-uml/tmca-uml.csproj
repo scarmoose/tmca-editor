@@ -74,6 +74,8 @@
     <Compile Include="Commands\File\SaveAsCommand.cs" />
     <Compile Include="Commands\File\SaveCommand.cs" />
     <Compile Include="Commands\Edit\UndoCommand.cs" />
+    <Compile Include="Commands\Help\AboutCommand.cs" />
+    <Compile Include="Commands\Help\HelpCommand.cs" />
     <Compile Include="Commands\Insert\NewClassCommand.cs" />
     <Compile Include="Commands\Insert\NewDependencyCommand.cs" />
     <Compile Include="Commands\Insert\NewTextBoxCommand.cs" />
@@ -130,6 +132,7 @@
     <Resource Include="Images\Zoom-In-icon.png" />
     <Resource Include="Images\Zoom-Out-icon.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
