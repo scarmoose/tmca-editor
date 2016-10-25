@@ -34,11 +34,11 @@ namespace tmca_uml.Commands.Edit
             var mainWindow = (Application.Current.MainWindow as MainWindow);
             if (mainWindow != null)
             {
-                mainWindow.data.StatusBarLabel = "The content was pasted succesfully";
+                mainWindow.data.StatusBarLabel = "The content was pasted succesfully...";
             }
             else
             {
-                mainWindow.data.StatusBarLabel = "Paste failed";
+                mainWindow.data.StatusBarLabel = "Paste failed!";
             }
         }
 

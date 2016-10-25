@@ -30,11 +30,11 @@ namespace tmca_uml.Commands
             var mainWindow = (Application.Current.MainWindow as MainWindow);
             if (mainWindow != null)
             {
-                mainWindow.data.StatusBarLabel = "The Project was saved succesfully";
+                mainWindow.data.StatusBarLabel = "The Project was saved as: " + "(xxxx)" + " succesfully...";
             }
             else
             {
-                mainWindow.data.StatusBarLabel = "Save As failed";
+                mainWindow.data.StatusBarLabel = "Save As failed!";
             }
         }
     }

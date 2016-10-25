@@ -25,7 +25,17 @@ namespace tmca_uml.Commands.View
 
         public void Execute(object parameter)
         {
-            MessageBox.Show("Zoom out");
+            {
+                var mainWindow = (Application.Current.MainWindow as MainWindow);
+                if (mainWindow != null)
+                {
+                    mainWindow.data.StatusBarLabel = "Zoom Out...";
+                }
+                else
+                {
+                    mainWindow.data.StatusBarLabel = "Zoom Out failed";
+                }
+            }
         }
     }
 }

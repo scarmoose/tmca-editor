@@ -32,11 +32,11 @@ namespace tmca_uml.Commands.Edit
             var mainWindow = (Application.Current.MainWindow as MainWindow);
             if (mainWindow != null)
             {
-                mainWindow.data.StatusBarLabel = "Redo";
+                mainWindow.data.StatusBarLabel = "Redo done...";
             }
             else
             {
-                mainWindow.data.StatusBarLabel = "Redo failed";
+                mainWindow.data.StatusBarLabel = "Redo failed!";
             }
         }
 

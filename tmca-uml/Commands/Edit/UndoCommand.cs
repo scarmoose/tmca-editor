@@ -32,11 +32,11 @@ namespace tmca_uml.Commands
             var mainWindow = (Application.Current.MainWindow as MainWindow);
             if (mainWindow != null)
             {
-                mainWindow.data.StatusBarLabel = "Undo";
+                mainWindow.data.StatusBarLabel = "Undo done...";
             }
             else
             {
-                mainWindow.data.StatusBarLabel = "Undo failed";
+                mainWindow.data.StatusBarLabel = "Undo failed!";
             }
         }
 

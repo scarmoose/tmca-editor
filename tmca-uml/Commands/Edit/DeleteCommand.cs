@@ -32,11 +32,11 @@ namespace tmca_uml.Commands.Edit
             var mainWindow = (Application.Current.MainWindow as MainWindow);
             if (mainWindow != null)
             {
-                mainWindow.data.StatusBarLabel = "The content was deleted succesfully";
+                mainWindow.data.StatusBarLabel = "The content was deleted succesfully...";
             }
             else
             {
-                mainWindow.data.StatusBarLabel = "Delete failed";
+                mainWindow.data.StatusBarLabel = "Delete failed!";
             }
         }
   
