@@ -29,7 +29,15 @@ namespace tmca_uml.Commands
 
         public void Execute(object parameter)
         {
-            MessageBox.Show("Save succesfull");
+            var mainWindow = (Application.Current.MainWindow as MainWindow);
+            if (mainWindow != null)
+            {
+                mainWindow.data.StatusBarLabel = "The Project was saved succesfully";
+            }
+            else
+            {
+                mainWindow.data.StatusBarLabel = "Save failed";
+            }
         }
 
         public string GestureText

@@ -29,7 +29,15 @@ namespace tmca_uml.Commands.Edit
 
         public void Execute(object parameter)
         {
-            MessageBox.Show("Redo");
+            var mainWindow = (Application.Current.MainWindow as MainWindow);
+            if (mainWindow != null)
+            {
+                mainWindow.data.StatusBarLabel = "Redo";
+            }
+            else
+            {
+                mainWindow.data.StatusBarLabel = "Redo failed";
+            }
         }
 
         public string GestureText

@@ -29,7 +29,15 @@ namespace tmca_uml
 
         public void Execute(object parameter)
         {
-            MessageBox.Show("Open something!");
+            var mainWindow = (Application.Current.MainWindow as MainWindow);
+            if (mainWindow != null)
+            {
+                mainWindow.data.StatusBarLabel = "Project opened succesfully";
+            }
+            else
+            {
+                mainWindow.data.StatusBarLabel = "Open Project failed";
+            }
         }
 
         public string GestureText

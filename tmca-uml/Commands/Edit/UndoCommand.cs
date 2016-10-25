@@ -29,7 +29,15 @@ namespace tmca_uml.Commands
 
         public void Execute(object parameter)
         {
-            MessageBox.Show("Undo");
+            var mainWindow = (Application.Current.MainWindow as MainWindow);
+            if (mainWindow != null)
+            {
+                mainWindow.data.StatusBarLabel = "Undo";
+            }
+            else
+            {
+                mainWindow.data.StatusBarLabel = "Undo failed";
+            }
         }
 
         public string GestureText

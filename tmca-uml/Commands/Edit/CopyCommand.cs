@@ -33,7 +33,11 @@ namespace tmca_uml.Commands.Edit
             var mainWindow = (Application.Current.MainWindow as MainWindow);
             if (mainWindow != null)
             {
-                mainWindow.data.StatusBarLabel = "Copy";
+                mainWindow.data.StatusBarLabel = "The content was copied succesfully";
+            }
+            else
+            {
+                mainWindow.data.StatusBarLabel = "Copy failed";
             }
         }
 

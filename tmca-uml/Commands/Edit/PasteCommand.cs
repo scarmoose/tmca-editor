@@ -31,7 +31,15 @@ namespace tmca_uml.Commands.Edit
 
         public void Execute(object parameter)
         {
-            MessageBox.Show("Copy something!");
+            var mainWindow = (Application.Current.MainWindow as MainWindow);
+            if (mainWindow != null)
+            {
+                mainWindow.data.StatusBarLabel = "The content was pasted succesfully";
+            }
+            else
+            {
+                mainWindow.data.StatusBarLabel = "Paste failed";
+            }
         }
 
         public string GestureText

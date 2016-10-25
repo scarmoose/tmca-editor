@@ -32,7 +32,11 @@ namespace tmca_uml
             var mainWindow = (Application.Current.MainWindow as MainWindow);
             if (mainWindow != null)
             {
-                mainWindow.data.StatusBarLabel = "New Project";
+                mainWindow.data.StatusBarLabel = "New Project created succesfully";
+            }
+            else
+            {
+                mainWindow.data.StatusBarLabel = "New Project failed";
             }
         }
 

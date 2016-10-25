@@ -29,7 +29,15 @@ namespace tmca_uml.Commands.Edit
 
         public void Execute(object parameter)
         {
-            MessageBox.Show("Deleted");
+            var mainWindow = (Application.Current.MainWindow as MainWindow);
+            if (mainWindow != null)
+            {
+                mainWindow.data.StatusBarLabel = "The content was deleted succesfully";
+            }
+            else
+            {
+                mainWindow.data.StatusBarLabel = "Delete failed";
+            }
         }
   
         public string GestureText

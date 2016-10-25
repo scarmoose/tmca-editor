@@ -29,7 +29,15 @@ namespace tmca_uml.Commands.Edit
 
         public void Execute(object parameter)
         {
-            MessageBox.Show("Cut");
+            var mainWindow = (Application.Current.MainWindow as MainWindow);
+            if (mainWindow != null)
+            {
+                mainWindow.data.StatusBarLabel = "The content was cutted succesfully";
+            }
+            else
+            {
+                mainWindow.data.StatusBarLabel = "Cut failed";
+            }
         }
 
         public string GestureText
