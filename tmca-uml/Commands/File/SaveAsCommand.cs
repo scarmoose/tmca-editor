@@ -17,7 +17,7 @@ namespace tmca_uml.Commands
 
         public SaveAsCommand()
         {
-            Header = "Save As";
+            Header = "Save As...";
         }
 
         public bool CanExecute(object parameter)
