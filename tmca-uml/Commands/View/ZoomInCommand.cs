@@ -3,10 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Input;
 
 namespace tmca_uml.Commands.View
 {
-    class ZoomInCommand
+    public class ZoomInCommand : ICommand
     {
+        public string Header { get; set; }
+
+        public event EventHandler CanExecuteChanged;
+
+        public ZoomInCommand()
+        {
+            Header = "Zoom In";
+        }
+
+        public bool CanExecute(object parameter)
+        {
+            return true;
+        }
+
+        public void Execute(object parameter)
+        {
+            MessageBox.Show("Zoom In something!");
+        }
     }
 }
