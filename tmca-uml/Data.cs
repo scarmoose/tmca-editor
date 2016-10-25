@@ -74,6 +74,9 @@ namespace tmca_uml
             NewClassCommand = new NewClassCommand();
             NewDependencyCommand = new NewDependencyCommand();
             NewTextBoxCommand = new NewTextBoxCommand();
+
+            //StatusBar
+            StatusBarLabel = "";
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
