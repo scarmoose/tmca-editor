@@ -20,7 +20,7 @@
         <KeyBinding Command="{Binding HelpCommand}" Key ="{Binding HelpCommand.Gesture.Key}" Modifiers="{Binding HelpCommand.Gesture.Modifiers}"/>
     </Window.InputBindings>
     <DockPanel>
-        <Menu DockPanel.Dock="Top">
+        <Menu DockPanel.Dock="Top" Background="WhiteSmoke">
             <MenuItem Header="_File">
                 <MenuItem InputGestureText="{Binding NewProjectCommand.GestureText}" Header="{Binding NewProjectCommand.Header}" Command="{Binding NewProjectCommand}">
                     <MenuItem.Icon>
@@ -104,37 +104,35 @@
                 <MenuItem Header="{Binding AboutCommand.Header}" Command="{Binding AboutCommand}"/>
             </MenuItem>
         </Menu>
-        <ToolBarTray DockPanel.Dock="Top">
-            <ToolBar>
-                <Button ToolTip="{Binding NewProjectCommand.Header}" Command="{Binding NewProjectCommand}" Height="20" Width="20">
-                    <Image Source="Images/new-file-icon.png"/>
-                </Button>
-                <Button ToolTip="{Binding OpenProjectCommand.Header}" Command="{Binding OpenProjectCommand}" Height="20" Width="20">
-                    <Image Source="Images/open-file-icon.png"/>
-                </Button>
-                <Button ToolTip="{Binding SaveCommand.Header}" Command="{Binding SaveCommand}" Height="20" Width="20">
-                    <Image Source="Images/Save-icon.png"/>
-                </Button>
-                <Separator/>
-                <Button ToolTip="{Binding UndoCommand.Header}" Command="{Binding UndoCommand}" Height="20" Width="20">
-                    <Image Source="Images/arrow-undo-icon.png"/>
-                </Button>
-                <Button ToolTip="{Binding RedoCommand.Header}" Command="{Binding RedoCommand}" Height="20" Width="20">
-                    <Image Source="Images/arrow-redo-icon.png"/>
-                </Button>
-                <Separator/>
-                <Button ToolTip="Bold" Command="" Height="20" Width="20">
-                    <Image Source="Images/Editing-Bold-icon.png"/>
-                </Button>
-                <Button ToolTip="Italic" Command="" Height="20" Width="20">
-                    <Image Source="Images/Editing-Italic-icon.png"/>
-                </Button>
-                <Button ToolTip="Underline" Command="" Height="20" Width="20">
-                    <Image Source="Images/Editing-Underline-icon.png"/>
-                </Button>
-            </ToolBar>
-        </ToolBarTray>
-        <StatusBar DockPanel.Dock="Bottom">
+        <ToolBar DockPanel.Dock="Top" ToolBarTray.IsLocked="True" Loaded="ToolBar_Loaded" Background="WhiteSmoke">
+            <Button ToolTip="{Binding NewProjectCommand.Header}" Command="{Binding NewProjectCommand}" Height="20" Width="20">
+                <Image Source="Images/new-file-icon.png"/>
+            </Button>
+            <Button ToolTip="{Binding OpenProjectCommand.Header}" Command="{Binding OpenProjectCommand}" Height="20" Width="20">
+                <Image Source="Images/open-file-icon.png"/>
+            </Button>
+            <Button ToolTip="{Binding SaveCommand.Header}" Command="{Binding SaveCommand}" Height="20" Width="20">
+                <Image Source="Images/Save-icon.png"/>
+            </Button>
+            <Separator/>
+            <Button ToolTip="{Binding UndoCommand.Header}" Command="{Binding UndoCommand}" Height="20" Width="20">
+                <Image Source="Images/arrow-undo-icon.png"/>
+            </Button>
+            <Button ToolTip="{Binding RedoCommand.Header}" Command="{Binding RedoCommand}" Height="20" Width="20">
+                <Image Source="Images/arrow-redo-icon.png"/>
+            </Button>
+            <Separator/>
+            <Button ToolTip="Bold" Command="" Height="20" Width="20">
+                <Image Source="Images/Editing-Bold-icon.png"/>
+            </Button>
+            <Button ToolTip="Italic" Command="" Height="20" Width="20">
+                <Image Source="Images/Editing-Italic-icon.png"/>
+            </Button>
+            <Button ToolTip="Underline" Command="" Height="20" Width="20">
+                <Image Source="Images/Editing-Underline-icon.png"/>
+            </Button>
+        </ToolBar>
+        <StatusBar DockPanel.Dock="Bottom" Background="{Binding StatusBarBackground}">
             <StatusBarItem Content="{Binding StatusBarLabel}" HorizontalContentAlignment="Center"/>
         </StatusBar>
         <Canvas HorizontalAlignment="Stretch" VerticalAlignment="Stretch">

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Windows.Controls;
 using System.Windows.Input;
 using tmca_uml.Commands;
 using tmca_uml.Commands.Edit;
@@ -41,13 +42,33 @@ namespace tmca_uml
         public ICommand AboutCommand { get; set; }
 
         //StatusBar
-        private string statusBarLabel;
+        private string statusBarLabel, statusBarBackground;
         public string StatusBarLabel
         {
             get { return statusBarLabel; }
             set
             {
                 statusBarLabel = value;
+                this.OnPropertyChanged("StatusBarLabel");
+            }
+        }
+        public string StatusBarBackground
+        {
+            get { return statusBarBackground; }
+            set
+            {
+                if (value.Equals("Error"))
+                {
+                    statusBarBackground = "Red";
+                }
+                else if (value.Equals("Succes"))
+                {
+                    statusBarBackground = "Green";
+                }
+                else
+                {
+                    statusBarBackground = "WhiteSmoke";
+                }
                 this.OnPropertyChanged("StatusBarLabel");
             }
         }
@@ -86,6 +107,7 @@ namespace tmca_uml
 
             //StatusBar
             StatusBarLabel = "";
+            StatusBarBackground = "";
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
