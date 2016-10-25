@@ -19,7 +19,7 @@ namespace tmca_uml.Commands.Edit
         {
             Header = "Cut";
 
-            Gesture = new KeyGesture(Key.N, ModifierKeys.Control);
+            Gesture = new KeyGesture(Key.X, ModifierKeys.Control);
         }
 
         public bool CanExecute(object parameter)
