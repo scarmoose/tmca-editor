@@ -2,6 +2,7 @@
 using System.Windows.Input;
 using tmca_uml.Commands;
 using tmca_uml.Commands.Edit;
+using tmca_uml.Commands.Help;
 using tmca_uml.Commands.Insert;
 using tmca_uml.Commands.View;
 
@@ -34,6 +35,10 @@ namespace tmca_uml
         public ICommand NewClassCommand { get; set; }
         public ICommand NewDependencyCommand { get; set; }
         public ICommand NewTextBoxCommand { get; set; }
+
+        //Help
+        public ICommand HelpCommand { get; set; }
+        public ICommand AboutCommand { get; set; }
 
         //StatusBar
         private string statusBarLabel;
@@ -74,6 +79,10 @@ namespace tmca_uml
             NewClassCommand = new NewClassCommand();
             NewDependencyCommand = new NewDependencyCommand();
             NewTextBoxCommand = new NewTextBoxCommand();
+
+            //Help
+            HelpCommand = new HelpCommand();
+            AboutCommand = new AboutCommand();
 
             //StatusBar
             StatusBarLabel = "";

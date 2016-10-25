@@ -21,7 +21,7 @@ namespace tmca_uml.Commands.Help
         {
             Header = "Help";
 
-            Gesture = new KeyGesture(Key.F1, ModifierKeys.Control);
+            Gesture = new KeyGesture(Key.F1);
         }
 
         public bool CanExecute(object parameter)

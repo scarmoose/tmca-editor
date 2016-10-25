@@ -17,6 +17,7 @@
         <KeyBinding Command="{Binding PasteCommand}" Key ="{Binding PasteCommand.Gesture.Key}" Modifiers="{Binding PasteCommand.Gesture.Modifiers}"/>
         <KeyBinding Command="{Binding UndoCommand}" Key ="{Binding UndoCommand.Gesture.Key}" Modifiers="{Binding UndoCommand.Gesture.Modifiers}"/>
         <KeyBinding Command="{Binding RedoCommand}" Key ="{Binding RedoCommand.Gesture.Key}" Modifiers="{Binding RedoCommand.Gesture.Modifiers}"/>
+        <KeyBinding Command="{Binding HelpCommand}" Key ="{Binding HelpCommand.Gesture.Key}" Modifiers="{Binding HelpCommand.Gesture.Modifiers}"/>
     </Window.InputBindings>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
@@ -98,9 +99,9 @@
                 <MenuItem Header="{Binding NewTextBoxCommand.Header}" Command="{Binding NewTextboxCommand}"/>
             </MenuItem>
             <MenuItem Header="_Help">
-                <MenuItem Header="_View Help" Command="Help"/>
+                <MenuItem InputGestureText="{Binding HelpCommand.GestureText}" Header="{Binding HelpCommand.Header}" Command="{Binding HelpCommand}"/>
                 <Separator/>
-                <MenuItem Header="_About TMCA Editor"/>
+                <MenuItem Header="{Binding AboutCommand.Header}" Command="{Binding AboutCommand}"/>
             </MenuItem>
         </Menu>
         <ToolBarTray DockPanel.Dock="Top">
