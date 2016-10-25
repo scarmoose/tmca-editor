@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using System.ComponentModel;
+using System.Windows.Input;
 using tmca_uml.Commands;
 using tmca_uml.Commands.Edit;
 using tmca_uml.Commands.Insert;
@@ -6,7 +7,7 @@ using tmca_uml.Commands.View;
 
 namespace tmca_uml
 {
-    class MenuBar
+    public class Data : INotifyPropertyChanged
     {
         //File
         public ICommand NewProjectCommand { get; set; }
@@ -35,9 +36,18 @@ namespace tmca_uml
         public ICommand NewTextBoxCommand { get; set; }
 
         //StatusBar
-        public static string statusBarLabel { get; set; }
+        private string statusBarLabel;
+        public string StatusBarLabel
+        {
+            get { return statusBarLabel; }
+            set
+            {
+                statusBarLabel = value;
+                this.OnPropertyChanged("StatusBarLabel");
+            }
+        }
 
-        public MenuBar()
+        public Data()
         {
             //File
             NewProjectCommand = new NewProjectCommand();
@@ -65,5 +75,17 @@ namespace tmca_uml
             NewDependencyCommand = new NewDependencyCommand();
             NewTextBoxCommand = new NewTextBoxCommand();
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged(string name)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(name));
+            }
+        }
+
     }
 }

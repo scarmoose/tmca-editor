@@ -20,8 +20,11 @@ namespace tmca_uml
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+    public Data data { get; set; }
+    public MainWindow()
         {
+            data = new Data();
+            DataContext = data;
             InitializeComponent();
         }
 

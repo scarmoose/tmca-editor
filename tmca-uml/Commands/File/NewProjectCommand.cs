@@ -29,7 +29,11 @@ namespace tmca_uml
 
         public void Execute(object parameter)
         {
-            MessageBox.Show("New something!");
+            var mainWindow = (Application.Current.MainWindow as MainWindow);
+            if (mainWindow != null)
+            {
+                mainWindow.data.StatusBarLabel = "New Project";
+            }
         }
 
         public string GestureText
