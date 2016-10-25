@@ -15,6 +15,13 @@ namespace tmca_uml.Commands.Edit
         public KeyGesture Gesture { get; set; }
         public event EventHandler CanExecuteChanged;
 
+        public RedoCommand()
+        {
+            Header = "Redo";
+
+            Gesture = new KeyGesture(Key.Y, ModifierKeys.Control);
+        }
+
         public bool CanExecute(object parameter)
         {
             return true;
