@@ -12,10 +12,12 @@ namespace tmca_uml.Commands.View
     {
         public string Header { get; set; }
         public event EventHandler CanExecuteChanged;
+        private bool visible { get; set; }
 
         public StatusbarToggleCommand()
         {
             Header = "Statusbar";
+            visible = true;
         }
 
         public bool CanExecute(object parameter)
@@ -25,7 +27,22 @@ namespace tmca_uml.Commands.View
 
         public void Execute(object parameter)
         {
-            MessageBox.Show("Statusbar");
+            var mainWindow = (Application.Current.MainWindow as MainWindow);
+            if (mainWindow != null)
+            {
+                if (visible == true)
+                {
+                    mainWindow.data.StatusBarVisability = "Hidden";
+                    mainWindow.data.StatusBarLabel = "";
+                    visible = false;
+                }
+                else if (visible == false)
+                {
+                    mainWindow.data.StatusBarVisability = "Visible";
+                    visible = true;
+                }
+                
+            }
         }
 
         public bool Checked(object sender, EventArgs e)

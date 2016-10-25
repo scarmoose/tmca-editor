@@ -42,7 +42,7 @@ namespace tmca_uml
         public ICommand AboutCommand { get; set; }
 
         //StatusBar
-        private string statusBarLabel, statusBarBackground;
+        private string statusBarLabel, statusBarBackground, statusBarVisability;
         public string StatusBarLabel
         {
             get { return statusBarLabel; }
@@ -61,7 +61,7 @@ namespace tmca_uml
                 {
                     statusBarBackground = "Red";
                 }
-                else if (value.Equals("Succes"))
+                else if (value.Equals("Success"))
                 {
                     statusBarBackground = "Green";
                 }
@@ -69,7 +69,16 @@ namespace tmca_uml
                 {
                     statusBarBackground = "WhiteSmoke";
                 }
-                this.OnPropertyChanged("StatusBarLabel");
+                this.OnPropertyChanged("StatusBarBackground");
+            }
+        }
+        public string StatusBarVisability
+        {
+            get { return statusBarVisability; }
+            set
+            {
+                statusBarVisability = value;
+                this.OnPropertyChanged("StatusBarVisability");
             }
         }
 
@@ -108,6 +117,7 @@ namespace tmca_uml
             //StatusBar
             StatusBarLabel = "";
             StatusBarBackground = "";
+            StatusBarVisability = "Visible";
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

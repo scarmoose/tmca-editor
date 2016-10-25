@@ -80,7 +80,7 @@
             </MenuItem>
             <MenuItem Header="_View">
                 <MenuItem Header="_Toolbox" IsCheckable="True" IsChecked="True"/>
-                <MenuItem Header="{Binding StatusbarToggleCommand.Header}" IsCheckable="True" IsChecked="True"/>
+                <MenuItem Header="{Binding StatusbarToggleCommand.Header}" Command="{Binding StatusbarToggleCommand}" IsCheckable="True" IsChecked="True"/>
                 <Separator/>
                 <MenuItem Header="{Binding ZoomInCommand.Header}" Command="{Binding ZoomInCommand}">
                     <MenuItem.Icon>
@@ -132,7 +132,7 @@
                 <Image Source="Images/Editing-Underline-icon.png"/>
             </Button>
         </ToolBar>
-        <StatusBar DockPanel.Dock="Bottom" Background="{Binding StatusBarBackground}">
+        <StatusBar DockPanel.Dock="Bottom" Background="{Binding StatusBarBackground}" Visibility="{Binding StatusBarVisability}">
             <StatusBarItem Content="{Binding StatusBarLabel}" HorizontalContentAlignment="Center"/>
         </StatusBar>
         <Canvas HorizontalAlignment="Stretch" VerticalAlignment="Stretch">

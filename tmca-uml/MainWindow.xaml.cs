@@ -20,13 +20,15 @@ namespace tmca_uml
     /// </summary>
     public partial class MainWindow : Window
     {
-    public Data data { get; set; }
-    public MainWindow()
+        public Data data { get; set; }
+
+        public MainWindow()
         {
             data = new Data();
             DataContext = data;
             InitializeComponent();
         }
+
         private void ToolBar_Loaded(object sender, RoutedEventArgs e)
         {
             ToolBar toolBar = sender as ToolBar;
