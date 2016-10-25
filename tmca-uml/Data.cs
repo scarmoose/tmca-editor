@@ -65,7 +65,7 @@ namespace tmca_uml
             UndoCommand = new UndoCommand();
 
             //View
-            //StatusbarToggleCommand = new StatusbarToggleCommand();
+            StatusbarToggleCommand = new StatusbarToggleCommand();
             //ToolboxToggleCommand = new ToolboxToggleCommand();
             ZoomInCommand = new ZoomInCommand();
             ZoomOutCommand = new ZoomOutCommand();
