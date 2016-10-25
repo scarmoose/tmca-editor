@@ -19,7 +19,7 @@ namespace tmca_uml.Commands.Edit
 
         public PasteCommand()
         {
-            Header = "Copy";
+            Header = "Paste";
 
             Gesture = new KeyGesture(Key.V, ModifierKeys.Control);
         }
@@ -34,7 +34,7 @@ namespace tmca_uml.Commands.Edit
             var mainWindow = (Application.Current.MainWindow as MainWindow);
             if (mainWindow != null)
             {
-                mainWindow.data.StatusBarLabel = "The content was pasted succesfully...";
+                mainWindow.data.StatusBarLabel = "The content was pasted successfully...";
             }
             else
             {
