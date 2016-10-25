@@ -13,6 +13,13 @@
         <KeyBinding Command="{Binding NewProjectCommand}" Key ="{Binding NewProjectCommand.Gesture.Key}" Modifiers="{Binding NewProjectCommand.Gesture.Modifiers}"/>
         <KeyBinding Command="{Binding OpenProjectCommand}" Key ="{Binding OpenProjectCommand.Gesture.Key}" Modifiers="{Binding OpenProjectCommand.Gesture.Modifiers}"/>
         <KeyBinding Command="{Binding ExitCommand}" Key ="{Binding ExitCommand.Gesture.Key}" Modifiers="{Binding ExitCommand.Gesture.Modifiers}"/>
+        <KeyBinding Command="{Binding SaveCommand}" Key ="{Binding SaveCommand.Gesture.Key}" Modifiers="{Binding SaveCommand.Gesture.Modifiers}"/>
+        <KeyBinding Command="{Binding CopyCommand}" Key ="{Binding CopyCommand.Gesture.Key}" Modifiers="{Binding CopyCommand.Gesture.Modifiers}"/>
+        <KeyBinding Command="{Binding CutCommand}" Key ="{Binding CutCommand.Gesture.Key}" Modifiers="{Binding CutCommand.Gesture.Modifiers}"/>
+        <KeyBinding Command="{Binding DeleteCommand}" Key ="{Binding DeleteCommand.Gesture.Key}" Modifiers="{Binding DeleteCommand.Gesture.Modifiers}"/>
+        <KeyBinding Command="{Binding PasteCommand}" Key ="{Binding PasteCommand.Gesture.Key}" Modifiers="{Binding PasteCommand.Gesture.Modifiers}"/>
+        <KeyBinding Command="{Binding UndoCommand}" Key ="{Binding UndoCommand.Gesture.Key}" Modifiers="{Binding UndoCommand.Gesture.Modifiers}"/>
+        <KeyBinding Command="{Binding RedoCommand}" Key ="{Binding RedoCommand.Gesture.Key}" Modifiers="{Binding RedoCommand.Gesture.Modifiers}"/>
     </Window.InputBindings>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
@@ -27,12 +34,12 @@
                         <Image Source="Images/open-file-icon.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="_Save">
+                <MenuItem InputGestureText="{Binding SaveCommand.GestureText}" Header="{Binding SaveCommand.Header}" Command="{Binding SaveCommand}">
                     <MenuItem.Icon>
                         <Image Source="Images/Save-icon.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="_Save As..."/>
+                <MenuItem Header="{Binding SaveAsCommand.Header}" Command="{Binding SaveAsCommand}"/>
                 <Separator/>
                 <MenuItem InputGestureText="{Binding ExitCommand.GestureText}" Header="{Binding ExitCommand.Header}" Command="{Binding ExitCommand}">
                     <MenuItem.Icon>
@@ -41,33 +48,33 @@
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="_Edit">
-                <MenuItem Header="_Undo">
+                <MenuItem InputGestureText="{Binding UndoCommand.GestureText}" Header="{Binding UndoCommand.Header}" Command="{Binding UndoCommand}">
                     <MenuItem.Icon>
                         <Image Source="Images/arrow-undo-icon.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="_Redo">
+                <MenuItem InputGestureText="{Binding RedoCommand.GestureText}" Header="{Binding RedoCommand.Header}" Command="{Binding RedoCommand}">
                     <MenuItem.Icon>
                         <Image Source="Images/arrow-redo-icon.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator/>
-                <MenuItem Header="_Cut">
+                <MenuItem InputGestureText="{Binding CutCommand.GestureText}" Header="{Binding CutCommand.Header}" Command="{Binding CutCommand}">
                     <MenuItem.Icon>
                         <Image Source="Images/cut-icon.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="_Copy">
+                <MenuItem InputGestureText="{Binding CopyCommand.GestureText}" Header="{Binding CopyCommand.Header}" Command="{Binding CopyCommand}">
                     <MenuItem.Icon>
                         <Image Source="Images/Copy-icon.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="_Paste">
+                <MenuItem InputGestureText="{Binding PasteCommand.GestureText}" Header="{Binding PasteCommand.Header}" Command="{Binding PasteCommand}">
                     <MenuItem.Icon>
                         <Image Source="Images/Paste-icon.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="_Delete">
+                <MenuItem InputGestureText="{Binding DeleteCommand.GestureText}" Header="{Binding DeleteCommand.Header}" Command="{Binding DeleteCommand}">
                     <MenuItem.Icon>
                         <Image Source="Images/Button-Close-icon.png"/>
                     </MenuItem.Icon>
@@ -77,21 +84,21 @@
                 <MenuItem Header="_Toolbox" IsCheckable="True" IsChecked="True"/>
                 <MenuItem Header="_Statusbar" IsCheckable="True" IsChecked="True"/>
                 <Separator/>
-                <MenuItem Header="_Zoom In">
+                <MenuItem Header="{Binding ZoomInCommand.Header}" Command="{Binding ZoomInCommand}">
                     <MenuItem.Icon>
                         <Image Source="Images/Zoom-In-icon.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="_Zoom Out">
+                <MenuItem Header="{Binding ZoomOutCommand.Header}" Command="{Binding ZoomOutCommand}">
                     <MenuItem.Icon>
                         <Image Source="Images/Zoom-Out-icon.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="_Insert">
-                <MenuItem Header="_Class"/>
-                <MenuItem Header="_Dependency"/>
-                <MenuItem Header="_TextBox"/>
+                <MenuItem Header="{Binding NewClassCommand.Header}" Command="{Binding NewClassCommand}"/>
+                <MenuItem Header="{Binding NewDependencyCommand.Header}" Command="{Binding NewDependencyCommand}"/>
+                <MenuItem Header="{Binding NewTextBoxCommand.Header}" Command="{Binding NewTextboxCommand}"/>
             </MenuItem>
             <MenuItem Header="_Help">
                 <MenuItem Header="_View Help" Command="Help"/>
@@ -109,5 +116,8 @@
                 </Button>
             </ToolBar>
         </ToolBarTray>
+        <StatusBar DockPanel.Dock="Bottom">
+            <Label Content="{Binding statusBarLabel}"/>
+        </StatusBar>
     </DockPanel>
 </Window>
