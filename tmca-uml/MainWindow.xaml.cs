@@ -45,11 +45,7 @@ namespace tmca_uml
         }
         public void addTextBox()
         {
-            TextBox txt = new TextBox();
-            txt.Name = "new_textbox";
-            txt.TextWrapping = TextWrapping.Wrap;
-            txt.AcceptsReturn = true;
-            txt.Margin = new Thickness(5, 10, 0, 0);
+            TxtBox txt = new TxtBox();
             myCanvas.Children.Add(txt);
         }
     }
