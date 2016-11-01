@@ -26,6 +26,7 @@ namespace tmca_uml
         public TxtBox()
         {
             InitializeComponent();
+            textbox.AcceptsReturn = true;
             MouseLeftButtonDown += new MouseButtonEventHandler(Control_MouseLeftButtonDown);
             MouseLeftButtonUp += new MouseButtonEventHandler(Control_MouseLeftButtonUp);
             MouseMove += new MouseEventHandler(Control_MouseMove);

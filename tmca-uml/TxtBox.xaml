@@ -8,12 +8,13 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <Border Background="Beige" />
-        <TextBox Name="textbox" HorizontalAlignment="Left"
-		 Height="23"
+        <TextBox Name="textbox" HorizontalAlignment="Stretch"
+		 MinHeight="23"
 		 Margin="5,5,5,5"
 		 TextWrapping="Wrap"
 		 Text=""
 		 VerticalAlignment="Top"
-		 Width="120"/>
+		 MinWidth="20"
+         MaxWidth="180"/>
     </Grid>
 </UserControl>
