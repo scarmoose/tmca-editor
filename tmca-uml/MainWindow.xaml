@@ -136,12 +136,24 @@
                 <Image Source="Images/Editing-Underline-icon.png"/>
             </Button>
         </ToolBar>
-        <StackPanel Name="myStackPanel" DockPanel.Dock="Left" Background="Black" Width="150">
-            <!-- StackPanel items here... -->
-        </StackPanel>
-        <StatusBar DockPanel.Dock="Bottom" Background="{Binding StatusBarBackground}" Visibility="{Binding StatusBarVisability}">
+        <StatusBar DockPanel.Dock="Bottom" Background="{Binding StatusBarBackground}" Visibility="{Binding StatusBarVisability}" BorderBrush="Black" BorderThickness="0.5">
             <StatusBarItem Content="{Binding StatusBarLabel}" HorizontalContentAlignment="Center"/>
         </StatusBar>
+        <Border BorderBrush="Black" BorderThickness="0.5">
+            <StackPanel Name="myStackPanel" DockPanel.Dock="Left" Width="150" >
+            <Button Name="Class" Height="100" Width="140" Margin="5">
+                <!-- Tilføj billede af en klasse... -->
+            </Button>
+            <Separator Height="30"/>
+            <Button Name="Dependency" Height="100" Width="140" Margin="5">
+                <!-- Tilføj billede af en pil... -->
+            </Button>
+            <Separator Height="30"/>
+            <Button Name="TextBox" Height="100" Width="140" Margin="5">
+                <!-- Tilføj billede af en textbox... -->
+            </Button>
+            </StackPanel>
+        </Border>
         <Canvas Name="myCanvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" AllowDrop="True">
             <!-- Canvas items here... -->
         </Canvas>
