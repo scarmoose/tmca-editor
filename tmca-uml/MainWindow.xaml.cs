@@ -43,5 +43,14 @@ namespace tmca_uml
                 mainPanelBorder.Margin = new Thickness();
             }
         }
+        public void addTextBox()
+        {
+            TextBox txt = new TextBox();
+            txt.Name = "new_textbox";
+            txt.TextWrapping = TextWrapping.Wrap;
+            txt.AcceptsReturn = true;
+            txt.Margin = new Thickness(5, 10, 0, 0);
+            myCanvas.Children.Add(txt);
+        }
     }
 }

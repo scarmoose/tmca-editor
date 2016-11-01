@@ -29,7 +29,7 @@ namespace tmca_uml.Commands.Insert
             if (mainWindow != null)
             {
                 mainWindow.data.resetStatusBar();
-                MessageBox.Show("New TextBox");
+                mainWindow.addTextBox();
             }
         }
     }

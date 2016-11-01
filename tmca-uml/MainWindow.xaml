@@ -100,7 +100,7 @@
             <MenuItem Header="_Insert">
                 <MenuItem Header="{Binding NewClassCommand.Header}" Command="{Binding NewClassCommand}"/>
                 <MenuItem Header="{Binding NewDependencyCommand.Header}" Command="{Binding NewDependencyCommand}"/>
-                <MenuItem Header="{Binding NewTextBoxCommand.Header}" Command="{Binding NewTextboxCommand}"/>
+                <MenuItem Header="{Binding NewTextBoxCommand.Header}" Command="{Binding NewTextBoxCommand}"/>
             </MenuItem>
             <MenuItem Header="_Help">
                 <MenuItem InputGestureText="{Binding HelpCommand.GestureText}" Header="{Binding HelpCommand.Header}" Command="{Binding HelpCommand}"/>
@@ -139,7 +139,7 @@
         <StatusBar DockPanel.Dock="Bottom" Background="{Binding StatusBarBackground}" Visibility="{Binding StatusBarVisability}">
             <StatusBarItem Content="{Binding StatusBarLabel}" HorizontalContentAlignment="Center"/>
         </StatusBar>
-        <Canvas HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Canvas Name="myCanvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <!-- Canvas items here... -->
         </Canvas>
     </DockPanel>
