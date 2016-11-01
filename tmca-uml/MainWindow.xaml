@@ -136,10 +136,13 @@
                 <Image Source="Images/Editing-Underline-icon.png"/>
             </Button>
         </ToolBar>
+        <StackPanel Name="myStackPanel" DockPanel.Dock="Left" Background="Black" Width="150">
+            <!-- StackPanel items here... -->
+        </StackPanel>
         <StatusBar DockPanel.Dock="Bottom" Background="{Binding StatusBarBackground}" Visibility="{Binding StatusBarVisability}">
             <StatusBarItem Content="{Binding StatusBarLabel}" HorizontalContentAlignment="Center"/>
         </StatusBar>
-        <Canvas Name="myCanvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Canvas Name="myCanvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" AllowDrop="True">
             <!-- Canvas items here... -->
         </Canvas>
     </DockPanel>
