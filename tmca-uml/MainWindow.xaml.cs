@@ -48,5 +48,10 @@ namespace tmca_uml
             TxtBox txt = new TxtBox();
             myCanvas.Children.Add(txt);
         }
+
+        public void clearCanvas()
+        {
+            myCanvas.Children.Clear();
+        }
     }
 }
