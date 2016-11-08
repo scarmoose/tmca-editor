@@ -83,7 +83,7 @@
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="_View">
-                <MenuItem Header="_Toolbox" IsCheckable="True" IsChecked="True"/>
+                <MenuItem Header="{Binding ToolboxToggleCommand.Header}" Command="{Binding ToolboxToggleCommand}" IsCheckable="True" IsChecked="True"/>
                 <MenuItem Header="{Binding StatusbarToggleCommand.Header}" Command="{Binding StatusbarToggleCommand}" IsCheckable="True" IsChecked="True"/>
                 <Separator/>
                 <MenuItem Header="{Binding ZoomInCommand.Header}" Command="{Binding ZoomInCommand}">
@@ -139,7 +139,7 @@
         <StatusBar DockPanel.Dock="Bottom" Background="{Binding StatusBarBackground}" Visibility="{Binding StatusBarVisability}" BorderBrush="Black" BorderThickness="0.5">
             <StatusBarItem Content="{Binding StatusBarLabel}" HorizontalContentAlignment="Center"/>
         </StatusBar>
-        <Border BorderBrush="Black" BorderThickness="0.5">
+        <Border BorderBrush="Black" BorderThickness="0.5" Visibility="{Binding ToolBoxVisability}">
             <StackPanel Name="myStackPanel" DockPanel.Dock="Left" Width="150" >
             <Button Name="Class" Height="100" Width="140" Margin="5">
                 <!-- Tilføj billede af en klasse... -->

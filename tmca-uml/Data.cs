@@ -42,7 +42,7 @@ namespace tmca_uml
         public ICommand AboutCommand { get; set; }
 
         //StatusBar
-        private string statusBarLabel, statusBarBackground, statusBarVisability;
+        private string statusBarLabel, statusBarBackground, statusBarVisability, toolBoxVisability;
         public string StatusBarLabel
         {
             get { return statusBarLabel; }
@@ -82,6 +82,16 @@ namespace tmca_uml
             }
         }
 
+        public string ToolBoxVisability
+        {
+            get { return toolBoxVisability; }
+            set
+            {
+                toolBoxVisability = value;
+                this.OnPropertyChanged("ToolBoxVisability");
+            }
+        }
+
         public Data()
         {
             //File
@@ -101,7 +111,7 @@ namespace tmca_uml
 
             //View
             StatusbarToggleCommand = new StatusbarToggleCommand();
-            //ToolboxToggleCommand = new ToolboxToggleCommand();
+            ToolboxToggleCommand = new ToolboxToggleCommand();
             ZoomInCommand = new ZoomInCommand();
             ZoomOutCommand = new ZoomOutCommand();
 
@@ -117,6 +127,7 @@ namespace tmca_uml
             //StatusBar
             resetStatusBar();
             StatusBarVisability = "Visible";
+            ToolBoxVisability = "Visible";
         }
 
         public void resetStatusBar()
