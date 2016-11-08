@@ -22,11 +22,14 @@ namespace tmca_uml
     {
         public Data data { get; set; }
 
+        private bool textBoxBeingDragged;
+
         public MainWindow()
         {
             data = new Data();
             DataContext = data;
             InitializeComponent();
+            AddHandler(Mouse.MouseUpEvent, new MouseButtonEventHandler(OnMouseUp), true);
         }
 
         private void ToolBar_Loaded(object sender, RoutedEventArgs e)
@@ -47,6 +50,30 @@ namespace tmca_uml
         {
             TxtBox txt = new TxtBox();
             myCanvas.Children.Add(txt);
+        }
+
+        public void OnMouseDown(object sender, MouseEventArgs args)
+        {
+            if (!(args.OriginalSource is Canvas))
+            {
+                textBoxBeingDragged = true;
+            }
+        }
+
+        public void OnMouseMove(object sender, MouseEventArgs args)
+        {
+            if (textBoxBeingDragged)
+            {
+                var elementBeingDragged = (FrameworkElement)args.OriginalSource;
+                var position = args.GetPosition(myCanvas);
+                Canvas.SetLeft(elementBeingDragged, position.X - elementBeingDragged.ActualWidth / 2);
+                Canvas.SetTop(elementBeingDragged, position.Y - elementBeingDragged.ActualHeight / 2);
+            }
+        }
+
+        public void OnMouseUp(object sender, MouseEventArgs args)
+        {
+            textBoxBeingDragged = false;
         }
 
         public void clearCanvas()

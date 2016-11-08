@@ -141,15 +141,15 @@
         </StatusBar>
         <Border BorderBrush="Black" BorderThickness="0.5" Visibility="{Binding ToolBoxVisability}">
             <StackPanel Name="myStackPanel" DockPanel.Dock="Left" Width="150" >
-            <Button Name="Class" Height="100" Width="140" Margin="5">
+                <Button Name="Class" Command="{Binding NewClassCommand}" Height="100" Width="140" Margin="5">
                 <!-- Tilføj billede af en klasse... -->
             </Button>
             <Separator Height="30"/>
-            <Button Name="Dependency" Height="100" Width="140" Margin="5">
+                <Button Name="Dependency" Command="{Binding NewDependencyCommand}" Height="100" Width="140" Margin="5">
                 <!-- Tilføj billede af en pil... -->
             </Button>
             <Separator Height="30"/>
-            <Button Name="TextBox" Height="100" Width="140" Margin="5">
+                <Button Name="TextBox" Command="{Binding NewTextBoxCommand}" Height="100" Width="140" Margin="5">
                 <!-- Tilføj billede af en textbox... -->
             </Button>
             </StackPanel>
